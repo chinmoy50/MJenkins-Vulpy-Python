@@ -44,7 +44,7 @@ pipeline {
                 script {
                     def response = sh(script: """
                         #!/bin/bash
-                        curl -v -X POST                         -H "Client-ID: ${CLIENT_ID}"                         -H "Client-Secret: ${CLIENT_SECRET}"                         -F "projectZipFile=@project.zip"                         -F "applicationId=${APPLICATION_ID}"                         -F "scanName=Movieflix-JavaScript-SCA Scan"                         -F "language=javascript"                         "${SCA_API_URL}"
+                        curl -v -X POST                         -H "Client-ID: ${CLIENT_ID}"                         -H "Client-Secret: ${CLIENT_SECRET}"                         -F "projectZipFile=@project.zip"                         -F "applicationId=${APPLICATION_ID}"                         -F "scanName=Vulpy-Python-SCA Scan"                         -F "language=python"                         "${SCA_API_URL}"
                     """, returnStdout: true).trim()
 
                     def jsonResponse = readJSON(text: response)
